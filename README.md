@@ -1,3 +1,3 @@
 # DolboNet_Telegram
 
-Для скачивания исходного кода, перейдите в раздел github.com/koval01/DolboNet_Telegram/releases
+Для скачивания исходного кода, перейдите в раздел [releases](https://github.com/koval01/DolboNet_Telegram/releases)
