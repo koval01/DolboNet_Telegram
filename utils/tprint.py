@@ -2,11 +2,11 @@
 # by Wokashi RG
 # https://github.com/wokashi-rg
 
-from datetime import now
+import datetime
 
 
 def current_time():
-    return str(datetime.now()) + ': '
+    return str(datetime.datetime.now()) + ': '
 
 
 def log(*msg):
