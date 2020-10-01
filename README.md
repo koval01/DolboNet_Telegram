@@ -1,6 +1,9 @@
 # DolboNet_Telegram
 
-Google Colab - https://colab.research.google.com/drive/1NbA8SbWY4gHatTavnMmQCK3vLdsUABef?usp=sharing
+Google Colab
+* Beta 2 - https://colab.research.google.com/drive/1NbA8SbWY4gHatTavnMmQCK3vLdsUABef?usp=sharing
+
+* Release - https://colab.research.google.com/drive/1S1KjRgT_v0TPeZJIXhb6hAt9znHYU0gE?usp=sharing
 
 -------------------------------
 
