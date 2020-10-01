@@ -6,6 +6,7 @@ Google Colab
 * Release - https://colab.research.google.com/drive/1S1KjRgT_v0TPeZJIXhb6hAt9znHYU0gE?usp=sharing
 
 -------------------------------
+О запуске на ПК или сервере
 
 Данный бот это переделаная версия бота [DolboNet](https://github.com/sergree/DolboNet) для Discord. Я переделал его под Телеграм, а именно под библиотеку aiogram. Бот на данный момент не поддерживаеться, но являеться работоспособным.
 
