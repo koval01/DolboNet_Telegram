@@ -10,18 +10,21 @@
 # Друга версія 31.07.2020 (Beta 2)
 
 # Реліз 01.10.2020
+# Правки 15.11.2020
 
 import logging
+
 from datetime import datetime
 from aiogram import Bot, Dispatcher, executor, types
 from aiogram.types import InlineQuery, \
 	InputTextMessageContent, InlineQueryResultArticle, Dice
 from aiogram.contrib.fsm_storage.memory import MemoryStorage
 from aiogram.utils.exceptions import Throttled
+
 from tokenizer import Tokenizer
 from utils.tprint import current_time, log
 from collections import Counter
-import sentry_sdk
+
 import schedule
 import collections
 import random
@@ -30,7 +33,6 @@ import config
 import predictor
 
 bannedusers = []
-sentry_sdk.init("https://28a8cabcfd5d408aa493a18a8c667881@sentry.io/5175066")
 logging.basicConfig(level=logging.INFO)
 bot = Bot(token=str(config.token))
 storage = MemoryStorage()
@@ -54,10 +56,6 @@ async def handle_message_received(message):
 	else:
 		await bot.send_chat_action(int(message.from_user.id), "typing")
 		data_wait = await message.reply('Думаю...')
-		data_wait = str(data_wait)
-		data_wait = data_wait.replace('{"message_id": ', '')
-		data_wait = data_wait[:data_wait.find(',')]
-		log(str('ID {} отправил сообщение боту - "{}"').format(int(message.from_user.id), str(message.text)))
 		input_messages = str(message.text)
 		input_tensor = tokenizer.encode_input(input_messages, message.from_user.id)
 		await bot.send_chat_action(int(message.from_user.id), "typing")
@@ -70,7 +68,7 @@ async def handle_message_received(message):
 			await bot.edit_message_text(
 				text=str(output_message[:2000]),
 				chat_id=int(message.from_user.id),
-				message_id=int(data_wait))
+				message_id=int(data_wait.message_id))
 			log(str('ID {} получил ответ - "{}"').format(str(message.from_user.id), str(output_message[:2000])))
 	
 if __name__ == '__main__':
