@@ -55,10 +55,7 @@ async def handle_message_received(message):
 	else:
 		await bot.send_chat_action(int(message.from_user.id), "typing")
 		x = await message.reply('Думаю...')
-# 		data_wait = str(data_wait)
-# 		data_wait = data_wait.replace('{"message_id": ', '')
-# 		data_wait = data_wait[:data_wait.find(',')]
-		data_wait = x.message.message_id
+		data_wait = x.message_id
 		log(str('ID {} отправил сообщение боту - "{}"').format(int(message.from_user.id), str(message.text)))
 		input_messages = str(message.text)
 		input_tensor = tokenizer.encode_input(input_messages, message.from_user.id)
